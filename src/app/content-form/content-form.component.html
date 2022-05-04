@@ -1,0 +1,55 @@
+<div class="card">
+<form [formGroup]="regStudent" (ngSubmit)="onSubmit()" >
+
+    <div>
+        <label for="fname">
+          First Name
+        </label>
+        <input id="fname" type="text" formControlName="fname">
+      </div>
+
+      <div>
+        <label for="lname">
+          Last Name
+        </label>
+        <input id="lname" type="text" formControlName="lname">
+      </div>
+
+      <div>
+        <label for="password">
+          Password
+        </label>
+        <input id="password" type="password" formControlName="password">
+      </div>
+      <div>
+        <label for="phone_number">
+          Phone Number
+        </label>
+        <input id="phone_number" type="text" formControlName="phone_number">
+      </div>
+      <div>
+        <label for="dob">
+          Date of Birth
+        </label>
+        <input id="dob" type="date" formControlName="dob">
+      </div>
+      <div>
+        <label for="level">
+          Level
+        </label>
+        <input id="level" type="number" formControlName="level">
+      </div><div>
+        <label for="hobby">
+          Hobby
+        </label>
+        <input id="hobby" type="text" formControlName="hobby">
+      </div>
+
+
+
+
+    <button class="button" type="submit">Register</button>
+    
+</form>
+
+</div>
