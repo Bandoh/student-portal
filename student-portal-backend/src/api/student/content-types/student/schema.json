@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "students",
+  "info": {
+    "singularName": "student",
+    "pluralName": "students",
+    "displayName": "Student"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fname": {
+      "type": "string",
+      "required": true
+    },
+    "lname": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "phone_number": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "password": {
+      "type": "password"
+    },
+    "dob": {
+      "type": "date",
+      "required": true
+    },
+    "hobby": {
+      "type": "text"
+    },
+    "level": {
+      "type": "enumeration",
+      "enum": [
+        "\"100\"",
+        "\"200\"",
+        "\"300\"",
+        "\"400\""
+      ],
+      "required": true
+    }
+  }
+}

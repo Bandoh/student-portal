@@ -1,54 +1,62 @@
 <div class="card">
-<form [formGroup]="regStudent" (ngSubmit)="onSubmit()" >
+<form id="reg" [formGroup]="regStudent" (ngSubmit)="onSubmit()" >
+<div>
+  <h3 >Student Registration Portal</h3>
+</div>
+  <table>
+    <tr>
+      <td><label for="fname">First Name</label></td>
+      <td><input required id="fname" type="text" formControlName="fname"></td>
+    </tr>
 
-    <div>
-        <label for="fname">
-          First Name
-        </label>
-        <input id="fname" type="text" formControlName="fname">
-      </div>
+    <tr>
+      <td><label for="lname">Last Name</label></td>
+      <td><input id="lname" type="text" formControlName="lname"></td>
+    </tr>  
+    <tr>
+      <tr>
+        <td><label for="email">Email</label></td>
+        <td><input id="email" type="text" formControlName="email"></td>
+      </tr>  
+      <tr>
+      <td> <label for="password">Password</label></td>
+      <td><input id="password" type="password" formControlName="password"></td>
+    </tr>
 
-      <div>
-        <label for="lname">
-          Last Name
-        </label>
-        <input id="lname" type="text" formControlName="lname">
-      </div>
+    <tr>
+      <td> <label for="phone_number">Phone Number</label></td>
+      <td><input id="phone_number" type="text" formControlName="phone_number"></td>
+    </tr>
 
-      <div>
-        <label for="password">
-          Password
-        </label>
-        <input id="password" type="password" formControlName="password">
-      </div>
-      <div>
-        <label for="phone_number">
-          Phone Number
-        </label>
-        <input id="phone_number" type="text" formControlName="phone_number">
-      </div>
-      <div>
-        <label for="dob">
-          Date of Birth
-        </label>
-        <input id="dob" type="date" formControlName="dob">
-      </div>
-      <div>
-        <label for="level">
-          Level
-        </label>
-        <input id="level" type="number" formControlName="level">
-      </div><div>
-        <label for="hobby">
-          Hobby
-        </label>
-        <input id="hobby" type="text" formControlName="hobby">
-      </div>
+    <tr>
+      <td><label for="dob">Date of Birth</label></td>
+      <td><input id="dob" type="date" formControlName="dob"></td>
+    </tr>
+
+    <tr>
+      <td><label for="level"> Level</label></td>
+      <td> <select formControlName="level" id="level" name="level">
+        <option value="100">100</option>
+        <option value="200">200</option>
+        <option value="300">300</option>
+        <option value="400">400</option>
+      </select></td>
+    </tr>
+
+    <tr>
+      <td> <label for="hobby">Hobby</label></td>
+      <td><input id="hobby" type="text" formControlName="hobby"></td>
+    </tr>
+
+    <tr>
+      <td colspan="4"><button class="button" type="submit">Register</button></td>
+    </tr>
+
+  </table>
 
 
 
 
-    <button class="button" type="submit">Register</button>
     
 </form>
 
