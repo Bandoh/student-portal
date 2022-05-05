@@ -8,14 +8,14 @@
     justify-content: center;
     height: 100vh;
     width: 50vw;
-    font-size: medium;
+    font-size: small;
 }
 
 
 
 .card{
-  padding: 50px;
-  width: 30vw;
+  padding: 30px;
+  width: 40vw;
   background-color: white;
 }
 
@@ -23,7 +23,7 @@ td{
   text-align: left;
 }
 th, td {
-  padding: 4px;
+  padding: 0px;
 }
 
 
@@ -33,7 +33,7 @@ th, td {
   
   input, select, textarea {
     
-    width: 309px;
+    width: 25vw;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -61,7 +61,7 @@ th, td {
       background-color: rgb(32, 32, 66);
       color:white;
       padding: 15px;
-      width: 25vw;
+      width: 35vw;
       border: none;
       justify-content: center;
       text-align: center;
@@ -97,7 +97,7 @@ th, td {
 }
 .grid-i{
 
-  font-size: 30px;
+  font-size: 10px;
   text-align: center;
   height: 100vh;
 }
