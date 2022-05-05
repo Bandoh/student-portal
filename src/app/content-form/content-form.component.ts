@@ -11,8 +11,9 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class ContentFormComponent implements OnInit {
 
-  url = 'http://192.168.0.199:1337/api/students'
+  // url = 'http://192.168.0.199:1337/api/students'
 
+  url = 'http://localhost:1337/api/students'
 student :Student= {
   fname:"",
   level:"",
