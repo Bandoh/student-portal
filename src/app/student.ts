@@ -1,3 +1,5 @@
+//defining interface for basic data structure of a student
+
 export interface Student{
 
     fname:string,
