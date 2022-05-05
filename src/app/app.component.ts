@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'student-portal';
   ngSelect = 100;
+  imgurl:string = "assets/back.jpg"
 }

@@ -5,7 +5,7 @@ export interface Student{
     email:string,
     password:string,
     phone_number:string,
-    dob:Date,
+    dob:number,
     level:string,
     hobby: string | null
 

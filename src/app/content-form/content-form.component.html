@@ -1,165 +1,163 @@
-<div class="card">
+<div class="right">
 <form #studentForm="ngForm" id="reg" (ngSubmit)="onSubmit()" >
-<div>
-  <h3 >Student Registration Portal</h3>
-</div>
-  <table>
-    <tr>
-      <td><label for="fname">First Name</label></td>
-      <td><input required [(ngModel)]="student.fname" name="fname" #fname="ngModel"></td>
+
+  <div class="card">
+    <div>
+      <h3  style="padding-bottom: 70px; text-align: center; justify-items: center; justify-content: center;">Student Registration Portal</h3>
+    </div>
+    <table>
+    
+      <tr>
+        <td [width]="110" class="forlabel"><label for="fname">First Name</label></td>
+        <td > <input required [(ngModel)]="student.fname" name="fname" #fname="ngModel"></td>
+      </tr>
+     <tr>
+       <td colspan="2">
+        <div *ngIf="fname.invalid && (fname.dirty || fname.touched)"
+        class="alert">
+    
+      <div *ngIf="fname.errors?.['required']">
+        First Name is required.
+      </div>
+    
+    </div>
+       </td>
+     </tr>
+  
+
+  
+     <tr>
+      <td><label for="lname">Last Name</label></td>
+      <td><input required  [(ngModel)]="student.lname" name="lname" #lname="ngModel"></td>
     </tr>
    <tr>
      <td colspan="2">
-      <div *ngIf="fname.invalid && (fname.dirty || fname.touched)"
+      <div *ngIf="lname.invalid && (lname.dirty || lname.touched)"
       class="alert">
   
-    <div *ngIf="fname.errors?.['required']">
-      First Name is required.
+    <div *ngIf="lname.errors?.['required']">
+     Last Name is required.
     </div>
-    <!-- <div *ngIf="fname.errors?.['minlength']">
-      Name must be at least 4 characters long.
-    </div> -->
-    <!-- <div *ngIf="fname.errors?.['forbiddenName']">
-      Name cannot be Bob.
-    </div> -->
   </div>
      </td>
    </tr>
-
-
-
-
+  
+  
+  
+  
    <tr>
-    <td><label for="lname">Last Name</label></td>
-    <td><input required  [(ngModel)]="student.lname" name="lname" #lname="ngModel"></td>
+    <td><label for="email">Email</label></td>
+    <td><input required [(ngModel)]="student.email" name="email" #email="ngModel"></td>
   </tr>
- <tr>
+  <tr>
    <td colspan="2">
-    <div *ngIf="lname.invalid && (lname.dirty || lname.touched)"
+    <div *ngIf="email.invalid && (email.dirty || email.touched)"
     class="alert">
-
-  <div *ngIf="lname.errors?.['required']">
-   Last Name is required.
+  
+  <div *ngIf="email.errors?.['required']">
+  Email is required.
   </div>
-</div>
+  </div>
    </td>
- </tr>
-
-
-
-
- <tr>
-  <td><label for="email">Email</label></td>
-  <td><input required [(ngModel)]="student.email" name="email" #email="ngModel"></td>
-</tr>
-<tr>
- <td colspan="2">
-  <div *ngIf="email.invalid && (email.dirty || email.touched)"
-  class="alert">
-
-<div *ngIf="email.errors?.['required']">
-Email is required.
-</div>
-</div>
- </td>
-</tr>
-
-
-<tr>
-  <td><label for="password">Password</label></td>
-  <td><input required minlength="8" [(ngModel)]="student.password" type="password" name="password" #password="ngModel"></td>
-</tr>
-<tr>
- <td colspan="2">
-  <div *ngIf="password.invalid && (password.dirty || password.touched)"
-  class="alert">
-      <div *ngIf="password.errors?.['minlength']">
-      Password must be at least 8 characters long.
-    </div>
-
-<div *ngIf="password.errors?.['required']">
-Password is required.
-</div>
-</div>
- </td>
-</tr>
-
-<tr>
-  <td><label for="phone_number">Phone Number</label></td>
-  <td><input required minlength="8"  [(ngModel)]="student.phone_number" type="number" name="phone_number" #phone_number="ngModel"></td>
-</tr>
-<tr>
- <td colspan="2">
-  <div *ngIf="phone_number.invalid && (phone_number.dirty || phone_number.touched)"
-  class="alert">
-      <div *ngIf="phone_number.errors?.['minlength']">
-      Phone Number must be at least 8 characters long.
-    </div>
-
-<div *ngIf="phone_number.errors?.['required']">
-  Phone Number is required.
-</div>
-</div>
- </td>
-</tr>
-
-<tr>
-  <td><label for="dob">Date of Birth</label></td>
-  <td><input required  [(ngModel)]="student.dob" type="date" name="dob" #dob="ngModel"></td>
-</tr>
-<tr>
- <td colspan="2">
-  <div *ngIf="dob.invalid && (dob.dirty || dob.touched)"
-  class="alert">
-
-
-<div *ngIf="dob.errors?.['required']">
-  Date is required.
-</div>
-</div>
- </td>
-</tr>
-
-
-
-
-<tr>
-  <td><label for="level">Level</label></td>
-  <td><select class="form-control" required [value]='100'  [(ngModel)]="student.level" type="date" name="level" #level="ngModel"> 
-       <option  value="100">100</option>
-      <option value="200">200</option>
-      <option value="300">300</option>
-      <option value="400">400</option> </select>  </td>
-</tr>
-<tr>
- <td colspan="2">
-  <div *ngIf="level.invalid && (level.dirty || level.touched)"
-  class="alert">
-
-
-<div *ngIf="level.errors?.['required']">
-  Level is required.
-</div>
-</div>
- </td>
-</tr>
-
-
-
-<tr>
-  <td><label for="hobby">Hobby</label></td>
-  <td><input [(ngModel)]="student.hobby" name="hobby" #hobby="ngModel"></td>
-</tr>
-<tr>
-</tr>
-
-
-    <tr>
-      <!-- <td colspan="2"><button [disabled]="!studentForm.form.valid" class="button" type="submit">Register</button></td> -->
-      <td colspan="2"><button  class="button" type="submit">Register</button></td>
-    </tr>
-
-  </table>
+  </tr>
+  
+  
+  <tr>
+    <td><label for="password">Password</label></td>
+    <td><input required minlength="8" [(ngModel)]="student.password" type="password" name="password" #password="ngModel"></td>
+  </tr>
+  <tr>
+   <td colspan="2">
+    <div *ngIf="password.invalid && (password.dirty || password.touched)"
+    class="alert">
+        <div *ngIf="password.errors?.['minlength']">
+        Password must be at least 8 characters long.
+      </div>
+  
+  <div *ngIf="password.errors?.['required']">
+  Password is required.
+  </div>
+  </div>
+   </td>
+  </tr>
+  
+  <tr>
+    <td><label for="phone_number">Phone Number</label></td>
+    <td><input required minlength="8"  [(ngModel)]="student.phone_number" type="tel" name="phone_number" #phone_number="ngModel"></td>
+  </tr>
+  <tr>
+   <td colspan="2">
+    <div *ngIf="phone_number.invalid && (phone_number.dirty || phone_number.touched)"
+    class="alert">
+        <div *ngIf="phone_number.errors?.['minlength']">
+        Phone Number must be at least 8 characters long.
+      </div>
+  
+  <div *ngIf="phone_number.errors?.['required']">
+    Phone Number is required.
+  </div>
+  </div>
+   </td>
+  </tr>
+  
+  <tr>
+    <td><label for="dob">Date of Birth</label></td>
+    <td><input required  [(ngModel)]="student.dob" type="date" name="dob" #dob="ngModel"></td>
+  </tr>
+  <tr>
+   <td colspan="2">
+    <div *ngIf="dob.invalid && (dob.dirty || dob.touched)"
+    class="alert">
+  
+  
+  <div *ngIf="dob.errors?.['required']">
+    Date is required.
+  </div>
+  </div>
+   </td>
+  </tr>
+  
+  
+  
+  
+  <tr>
+    <td><label for="level">Level</label></td>
+    <td><select class="form-control" required [value]='100'  [(ngModel)]="student.level" type="date" name="level" #level="ngModel"> 
+         <option  value="100">100</option>
+        <option value="200">200</option>
+        <option value="300">300</option>
+        <option value="400">400</option> </select>  </td>
+  </tr>
+  <tr>
+   <td colspan="2">
+    <div *ngIf="level.invalid && (level.dirty || level.touched)"
+    class="alert">
+  
+  
+  <div *ngIf="level.errors?.['required']">
+    Level is required.
+  </div>
+  </div>
+   </td>
+  </tr>
+  
+  
+  
+  <tr>
+    <td><label for="hobby">Hobby</label></td>
+    <td><input [(ngModel)]="student.hobby" name="hobby" #hobby="ngModel"></td>
+  </tr>
+  <tr>
+  </tr>
+  
+  
+      <tr>
+        <td colspan="2"><button [disabled]="!studentForm.form.valid" class="button" type="submit">Register</button></td>
+      
+      </tr>
+  
+    </table>
+  </div>
 
 
 

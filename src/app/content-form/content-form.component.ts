@@ -18,13 +18,12 @@ student :Student= {
   fname:"",
   level:"",
   lname:"",
-  dob:new Date(Date.now()),
+  dob: 0,
   hobby:"",
   password:"",
   email:"",
   phone_number:""
 }
-
 
   constructor( private http: HttpClient ) { }
 
@@ -41,20 +40,37 @@ student :Student= {
     };
 
 
-    console.log(this.student)
-
-
-
-
       const r = this.http.post(this.url,this.student, httpOptions)
-  
-  
-      // r.subscribe((data) => {
-      //   console.log(data)
-        
-      // })
 
-      r.subscribe (data=>alert("Successfully Registered!"), (err)=>alert("An error occured" +err))
+let currentDate = new Date().getFullYear()
+let userDate = new Date(this.student.dob).getFullYear()
+
+
+if(this.student.dob ==0 ) alert("Please input your date of birth")
+else if (currentDate - userDate <15 ) {alert("Please enter a valid date of birth"); console.log(Date.now());}
+else if (this.student.level == "") alert("Please select your level")
+else{
+  r.subscribe((res) => {
+    const {status,message,data}:any = res;
+    if(status == "failed"){
+      if (message['path']){
+        alert("The "+message['path'] +" field must be unique")
+      }else
+      alert((message))
+    }
+    else{
+      console.log(data)
+      alert("Successfully registered user"+ data['attributes']['fname']+" "+ data['attributes']['lname'] )
+    }
+    
+  })
+
+
+}
+  
+    
+
+  
       
     }
 
