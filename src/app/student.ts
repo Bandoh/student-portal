@@ -1,5 +1,5 @@
-export interface student{
-    id:string,
+export interface Student{
+
     fname:string,
     lname:string,
     email:string,

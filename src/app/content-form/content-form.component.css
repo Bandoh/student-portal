@@ -7,6 +7,7 @@
     place-items: center; */
     margin-top: 5%;
     display: flex;
+ 
     align-items: center;
     justify-content: center;
 }
@@ -16,6 +17,7 @@
   }
   
   input, select, textarea {
+    
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -29,6 +31,7 @@
   }
   
   input[type=submit] {
+       background-color: rebeccapurple;
     background-color: #04AA6D;
     color: white;
     padding: 12px 20px;
@@ -66,3 +69,6 @@
     }
   }
 
+.alert{
+  color: red;
+}
