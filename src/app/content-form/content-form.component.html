@@ -83,14 +83,22 @@
   
   <tr>
     <td><label for="phone_number">Phone Number</label></td>
-    <td><input required minlength="8"  [(ngModel)]="student.phone_number" type="tel" name="phone_number" #phone_number="ngModel"></td>
+    <td><input pattern="[0-9]*" required minlength="10" maxlength="10"  [(ngModel)]="student.phone_number" type="tel" name="phone_number" #phone_number="ngModel"></td>
   </tr>
   <tr>
    <td colspan="2">
     <div *ngIf="phone_number.invalid && (phone_number.dirty || phone_number.touched)"
     class="alert">
         <div *ngIf="phone_number.errors?.['minlength']">
-        Phone Number must be at least 8 characters long.
+        Phone Number must be at least 10 characters long.
+      </div>
+
+      <div *ngIf="phone_number.errors?.['maxlength']">
+        Phone Number must not exceed 10 characters.
+      </div>
+
+      <div *ngIf="phone_number.errors?.['pattern']">
+        Phone numbers cannot contain letters
       </div>
   
   <div *ngIf="phone_number.errors?.['required']">
@@ -153,6 +161,11 @@
   
       <tr>
         <td colspan="2"><button [disabled]="!studentForm.form.valid" class="button" type="submit">Register</button></td>
+      
+      </tr>
+
+      <tr>
+        <td colspan="2"><div style="text-align: center; padding: 10px;" class="alert" *ngIf="!studentForm.form.valid">Please Fill the for apprpriately</div></td>
       
       </tr>
   

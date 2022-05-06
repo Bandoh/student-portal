@@ -12,3 +12,6 @@ npm run start
 # or
 yarn start
 ```
+
+
+Navigate to `http://localhost:1337/admin` for the admin console

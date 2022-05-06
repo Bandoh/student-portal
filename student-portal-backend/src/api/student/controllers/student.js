@@ -23,6 +23,12 @@ module.exports = createCoreController('api::student.student', ({ strapi }) => ({
         if (email == "") message = "email is required"
         if (level == "") message = "level is required"
         if (phone_number == "") message = "phone_number is required"
+        try {
+            console.log(isNaN(parseInt(phone_number)))
+            
+        } catch (error) {
+            message = "phone number should be a number"
+        }
 
 
         if (message == "") {
